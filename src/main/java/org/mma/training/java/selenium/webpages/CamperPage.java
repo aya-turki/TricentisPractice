@@ -29,6 +29,8 @@ public class CamperPage {
 	   }
 	// Web elements - Camper	
 	@FindBy(name="Tricentis Logo") WebElement systemLogo;
+	@FindBy(name="Navigation Camper") WebElement camperTab;
+	
 	
 	@Test	
 	public void camperPageElementsAndMethods() {
@@ -37,6 +39,8 @@ public class CamperPage {
 	  
 	        // Methods - Camper
 		      Assert.assertTrue(systemLogo.isDisplayed(), "web element is not displayed");
+		      camperTab.click();
+		      Thread.sleep(4000);
         } catch (InterruptedException e) {
       }	
    }

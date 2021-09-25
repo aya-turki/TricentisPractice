@@ -14,7 +14,6 @@ public class TestTricentis extends BaseClass {
 		CamperPage camperPage = PageFactory.initElements(driver, CamperPage.class);
 		camperPage.camperPageElementsAndMethods();
 		
-		
 	}
 	
 	
