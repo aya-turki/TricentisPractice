@@ -23,44 +23,44 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseClass {
 
-	
+
 	public WebDriver driver;	
 	public String Browser = "Chrome";
 	public String baseurl = "http://sampleapp.tricentis.com/101/index.php";
 
-	
-	   @BeforeClass
-	   public void StartBrowser() {	
-		  try {
-		  driver = BrowserFactory.startApplication(driver, Browser, baseurl);
-		  
-		     Thread.sleep(2000);
-		   System.out.println(driver.getTitle());
-		 // Assert.assertEquals(driver.getTitle(), "aydentax.com/");	
-		  driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
-	     } catch (InterruptedException e) {
-	     }
-	   } 
-	   
-	   
-	   
-	   @AfterClass
-		   public void CloseBrowser() {	
-		   BrowserFactory.closeBrowser(driver);	 
-		 }
-		 
-	
-	  @AfterMethod
-	      public void tearDownMethod (ITestResult result) {
-	      
-	         if (result.getStatus()== ITestResult.FAILURE) {
-	        	  Helper.captureScreenshot(driver);
-	         }
-	        
-}
-	   
-  
-	   
+
+	@BeforeClass
+	public void StartBrowser() {	
+		try {
+			driver = BrowserFactory.startApplication(driver, Browser, baseurl);
+
+			Thread.sleep(2000);
+			System.out.println(driver.getTitle());	
+			Assert.assertEquals(driver.getTitle(), "http://sampleapp.tricentis.com/101/index.php/");	
+			driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+		} catch (InterruptedException e) {
+		}
+	} 
+
+
+
+	@AfterClass
+	public void CloseBrowser() {	
+		BrowserFactory.closeBrowser(driver);	 
+	}
+
+
+	@AfterMethod
+	public void tearDownMethod (ITestResult result) {
+
+		if (result.getStatus()== ITestResult.FAILURE) {
+			Helper.captureScreenshot(driver);
+		}
+
+	}
+
+
+
 }
 
 /**
