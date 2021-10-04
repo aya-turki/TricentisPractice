@@ -43,9 +43,10 @@ public class CamperPage {
 	@FindBy(name="Annual Mileage") WebElement annualMileage;
 	@FindBy(name="Next (Enter Insurant Data)") WebElement nextBtn;
 
-
 	@Test	
-	public void camperPageElementsAndMethods() {
+	public void camperPageElementsAndMethods(String mInput, String kInput, 
+			String manuInput, String nosDrp, String fType, String pload, 
+			String tw, String lpInput, String amInput) {
 		try {
 			Thread.sleep(4000); // Wait statement
 
@@ -62,7 +63,7 @@ public class CamperPage {
 			payload.sendKeys(null);
 			totalWeight.sendKeys(null);
 			listPrice.sendKeys(null);
-			licensePlateNumber.sendKeys(null);
+			// licensePlateNumber.sendKeys(null);
 			annualMileage.sendKeys(null);
 			nextBtn.click();
 

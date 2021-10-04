@@ -16,9 +16,13 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.mma.training.java.selenium.datadriven.TestDataUtil;
 import org.mma.training.java.selenium.util.BrowserFactory;
 import org.mma.training.java.selenium.util.Helper;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 
 public class BaseClass {
@@ -36,7 +40,8 @@ public class BaseClass {
 
 			Thread.sleep(2000);
 			System.out.println(driver.getTitle());	
-			Assert.assertEquals(driver.getTitle(), "http://sampleapp.tricentis.com/101/index.php/");	
+//			Assert.assertEquals(driver.getTitle(), "http://sampleapp.tricentis.com/101/index.php/");
+			Assert.assertEquals(driver.getTitle(), "Tricentis Vehicle Insurance");	
 			driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		} catch (InterruptedException e) {
 		}
@@ -59,6 +64,10 @@ public class BaseClass {
 
 	}
 
+	@DataProvider
+	  public Iterator<Object[]> getCamperTabTestData() { 
+		     ArrayList<Object[]> testData = TestDataUtil.getCamperTabTestData(); 
+		     return testData.iterator(); }
 
 
 }
