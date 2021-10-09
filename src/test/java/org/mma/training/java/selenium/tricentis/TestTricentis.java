@@ -17,13 +17,32 @@ public class TestTricentis extends BaseClass {
 		String userDamageInsurance, String userEmail, String userUserName, String userPassword, String userConfirmPassword) {
 		
 		CamperPage camperPage = PageFactory.initElements(driver, CamperPage.class);
-//		camperPage.camperPageElementsAndMethods(userCamperMake, userEnginePerformance, userDateOfManufacture, userNumberOfSeats, userFuelType,
-//    	userPayload, userTotalWeight, userListPrice, userAnnualMileage, userFirstName, userLastName, userDateOfBirth, userStreetAddress,
-//    	userCountry, userZipCode, userOccupation, userStartDate, userInsuranceSum, userDamageInsurance, userEmail, userUserName, userPassword,
-//    	userConfirmPassword);
-//		
-		camperPage.camperPageElementsAndMethods(userCamperMake, userEnginePerformance, userDateOfManufacture, userNumberOfSeats, userFuelType,
-		    	userPayload, userTotalWeight, userListPrice, userAnnualMileage);
+		camperPage.camperPageElementsAndMethods(userCamperMake,
+        		userEnginePerformance,
+        		userDateOfManufacture,
+        		userNumberOfSeats,
+        		userFuelType,
+        		userPayload,
+        		userTotalWeight,
+        		userListPrice,
+        		userAnnualMileage,
+        		userFirstName,
+        		userLastName,
+        		userDateOfBirth,
+        		userStreetAddress,
+        		userCountry,
+        		userZipCode,
+        		userOccupation,
+        		userStartDate,
+        		userInsuranceSum,
+        		userDamageInsurance,
+        		userEmail,
+        		userUserName,
+        		userPassword,
+        		userConfirmPassword);
+		
+	//	camperPage.camperPageElementsAndMethods(userCamperMake, userEnginePerformance, userDateOfManufacture, userNumberOfSeats, userFuelType,
+		//    	userPayload, userTotalWeight, userListPrice, userAnnualMileage);
 
 	}
 	
